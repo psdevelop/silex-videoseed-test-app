@@ -1,0 +1,66 @@
+/*Шрифты приложения*/
+body {
+	font-family: Tahoma, Arial;
+}
+
+/*Контейнер имитации рамки видеоролика*/
+.VideoSeed_TestApp__VideoRegion {
+	position: relative;
+	width: 600px;
+	height: 400px;
+	background-color: #cccccc;
+}
+
+/*Контейнер для вывода прогресса в процентах*/
+.VideoSeed_TestApp__ProgressRegion {
+	position: absolute;
+	width: 150px;
+	height: 70px;
+	font-size: 52px;
+	left: 225px;
+	top: 165px;
+	text-align: center;
+}
+
+/*Контейнер для вывода статуса*/
+.VideoSeed_TestApp__StatusRegion {
+	position: absolute;
+	width: 250px;
+	height: 30px;
+	font-size: 22px;
+	left: 0px;
+	top: 370px;
+}
+
+/*Описание стилей отображения таблицы статистики - 
+основной табличный тэг*/
+table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 14px;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+/*Описание стилей отображения таблицы статистики - 
+стили заголовка и первых слева ячеек*/
+th, td:first-child {
+	background: #AFCDE7;
+	color: white;
+	padding: 10px 20px;
+}
+
+/*Описание стилей отображения таблицы статистики - 
+стили границ ячеек*/
+th, td {
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	border-color: white;
+}
+
+td {
+	background: #D8E6F3;
+}
+
+th:first-child, td:first-child {
+	text-align: left;
+}

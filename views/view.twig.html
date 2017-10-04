@@ -1,0 +1,43 @@
+{% extends "base.twig.html" %}
+
+{% block title %}Stat{% endblock %}
+
+{% block content %}
+	<h1>Videoseed Stat</h1>
+	<!-- Таблица статистики -->
+	<table>
+		<!-- Вывод строки заголовка сводной 
+		таблицы статистики просмотров-->
+		<tr>
+			<th>Cookie</th>
+			<th>Loaded</th>
+			<th>Progress in 25</th>
+			<th>Progress in 50</th>
+			<th>Progress in 75</th>
+			<th>Finished</th>
+		</tr>
+		<!-- Вывод записей статистики с ключем-хешем
+		от User-Agent и счетчиками различных состояний
+		просмотра, извлеченных из запроса с группировкой,
+		дополнительно преобразованного-->
+		{% for payload in payloads %}
+			<tr>
+				<td>{{ payload.COOKIE }}</td>
+				<td>{{ payload.loaded }}</td>
+				<td>{{ payload.progress25 }}</td>
+				<td>{{ payload.progress50 }}</td>
+				<td>{{ payload.progress75 }}</td>
+				<td>{{ payload.finished }}</td>
+			</tr>
+		{% else %}
+			<!-- Если таблица статистики пуста -->
+			<tr>
+				<td colspan="6">No payloads found</td>
+			</tr>
+		{% endfor %}
+	</table>
+	
+	<!-- Ссылка на главную страницу сервиса -->
+	<a href="/">Go to index page</a>
+
+{% endblock %}
