@@ -1,0 +1,31 @@
+{% extends "base.twig.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+	<!-- Вывод содержимого блока из базового шаблона -->
+    {{ parent() }}
+	<!-- Подключаем библиотеку JQuery, необходимую для
+	индекс страницы (функции отправки через AJAX и тд)-->
+    <script src="/assets/jquery-3.2.1.min.js"> </script>
+	<!-- Подключаем библиотеку зависимую от JQuery, 
+	необходимую для работы с куками-->
+	<script src="/assets/jquery.cookie.js"> </script>
+	
+{% endblock %}
+{% block content %}
+	<!-- Заменяем блок основного содержимого страницы -->
+	<h1>Welcome to Test App Videoseed</h1>
+	<div class="VideoSeed_TestApp__VideoRegion">
+		<div>Video Display Region</div>
+		<!-- Контейнер отображения процента -->
+		<div class="VideoSeed_TestApp__ProgressRegion"></div>
+		<!-- Контейнер отображения статуса -->
+		<div class="VideoSeed_TestApp__StatusRegion">...</div>
+	</div>
+	<!-- Ссылка на страницу вывода статистики -->
+	<a href="/stat">Go to statistic</a>
+	
+	<!-- Подключаем основной fronend-скрипт приложения -->
+	<script src="/assets/app.js"></script>
+	
+{% endblock %}
